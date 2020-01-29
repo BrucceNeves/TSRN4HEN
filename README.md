@@ -7,7 +7,7 @@ This repository contains supplementary material of the paper "A Two-Stage Regula
 # Resources
 
 - [Source-code](src/) of the proposed regularization framework, as well as the other existing frameworks (GFHF, LLGC, GNetMine, and LPHN)
-- [Datasets](dataset/): twelve heterogeneous event networks from different domains (extracted from Reuters Corpus).
+- [Datasets](datasets/): twelve heterogeneous event networks from different domains (extracted from Reuters Corpus).
 
 
 # How to run
