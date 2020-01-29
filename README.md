@@ -44,15 +44,15 @@ Configuration file example
 }
 ```
 For all methods:
-- **iterations** Maximum number of iterations, if the algorithm takes time to converge
-- **convergenceThreshold** Threshold to consider that the network has converged
-- **labels** File containing labels for labeled network nodes. See more details about the format file in section [Labels File](#labels-file)
-- **relations** File containing the list of edge. See more details about the format file in section [Edges File](#edges-file)
-- **output_file** Output file for the vector F of each node. Note labeled nodes are included in the output file
+- **iterations:** Maximum number of iterations, if the algorithm takes time to converge
+- **convergenceThreshold:** Threshold to consider that the network has converged
+- **labels:** File containing labels for labeled network nodes. See more details about the format file in section [Labels File](#labels-file)
+- **relations:** File containing the list of edge. See more details about the format file in section [Edges File](#edges-file)
+- **output_file:** Output file for the vector F of each node. Note labeled nodes are included in the output file
 Method parameters:
 - **mi:** Importance of labeled data during the propagation of labels, ranging from 0.1 to 1. Used in **LLGC**, **GNetMine** and **TSRF alpha regularizer**
 - **weight_relations:** Weight of the relations between the layers, the name of the layers must be connected by 'underline' and the values will be automatically normalized when running GNetMine, all existing layer relations must be defined. If no pair of layers is specified all pairs of layers will have equal weights. Used only in **GNetMine**
-- **miBeta** equal to ** mi **. Used only in **TSRF beta regularizer**
+- **miBeta:** Equal to **mi**. Used only in **TSRF beta regularizer**
 
 # Edges File
 In edges file each line represents an edge in the following format:
