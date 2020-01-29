@@ -1,0 +1,15 @@
+{
+  "iterations":"1000",
+  "convergenceThreshold":"0.00005",
+  "labels": "labels/business_transactions.labeled_events",
+  "relations": [
+    "datasets/business_transactions.edges"
+  ],
+  "output_file": "out.model",
+
+  "mi": "1",
+
+  "weight_relations": {},
+
+  "miBeta": "1"
+}

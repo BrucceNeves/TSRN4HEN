@@ -108,6 +108,7 @@ public final class Rede implements Serializable {
         if (no == null) {
             no = new No(node);
             no.F = new double[F_size];
+            no.lastF = new double[F_size];
             if (label_y != null) {
                 String v[] = label_y.split(",");
                 no.Y = new double[F_size];

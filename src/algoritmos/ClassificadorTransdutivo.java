@@ -22,7 +22,7 @@ public abstract class ClassificadorTransdutivo {
     }
 
     public ClassificadorTransdutivo(Rede rede, JSONObject config) {
-        this(rede, config.getInt("iteracoes"), config.getDouble("limiarConvergencia"));
+        this(rede, config.getInt("iterations"), config.getDouble("convergenceThreshold"));
     }
 
     public ClassificadorTransdutivo(Rede rede, int interacoes, double limiarConvergencia) {
@@ -42,10 +42,6 @@ public abstract class ClassificadorTransdutivo {
                 break;
             }
         }
-    }
-
-    public void setInteracoes(int interacoes) {
-        this.interacoes = interacoes;
     }
 
     protected abstract double getGrau(No obj);
