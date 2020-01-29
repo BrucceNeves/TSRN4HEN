@@ -22,9 +22,6 @@ public final class Rede implements Serializable {
         }
     }
 
-    private Rede() {
-    }
-
     public Rede(String fileRelacoes, String fileLabels) throws Exception {
         this(new String[]{fileRelacoes}, fileLabels);
     }
@@ -124,21 +121,6 @@ public final class Rede implements Serializable {
         return new Object[]{no, camada};
     }
 
-    public HashMap<String, double[]> copyF() {
-        HashMap<String, double[]> copy = new HashMap<>();
-        for (HashMap<String, No> relacao : camadas.values()) {
-            for (String keyOBJ : relacao.keySet()) {
-                No obj = relacao.get(keyOBJ);
-                double[] aux = new double[F_size];
-                for (int i = 0; i < F_size; i++) {
-                    aux[i] = obj.F[i];
-                }
-                copy.put(keyOBJ, aux);
-            }
-        }
-        return copy;
-    }
-
     public double[] criarVetorClasse() {
         return new double[F_size];
     }
@@ -153,107 +135,4 @@ public final class Rede implements Serializable {
         }
     }
 
-    public void limparRede() {
-        for (HashMap<String, No> relacao : camadas.values()) {
-            for (No no : relacao.values()) {
-                if (no.Y == null) {
-                    no.F = criarVetorClasse();
-                } else {
-                    for (int i = 0; i < F_size; i++) {
-                        no.F[i] = no.Y[i];
-                    }
-                }
-            }
-        }
-    }
-
-    public void setLayerAsLabeled(String layer) {
-        for (HashMap<String, No> camada : camadas.values()) {
-            for (No no : camada.values()) {
-                no.Y = null;
-            }
-        }
-        for (No no : camadas.get(layer).values()) {
-            no.Y = criarVetorClasse();
-            for (int i = 0; i < no.F.length; i++) {
-                no.Y[i] = no.F[i];
-            }
-        }
-    }
-
-    public void restaurarRede(Rede backup) {
-        restaurarRede_F(backup);
-        for (String camada_nome : backup.camadas.keySet()) {
-            for (No noBackup : backup.camadas.get(camada_nome).values()) {
-                for (String adjRelacao : noBackup.adjacentes.keySet()) {
-                    for (No objetoBackup : noBackup.adjacentes.get(adjRelacao).keySet()) {
-                        double pesoBackup = noBackup.adjacentes.get(adjRelacao).get(objetoBackup);
-                        No eventoAtual = camadas.get(camada_nome).get(noBackup.toString());
-                        No objetoAtual = camadas.get(adjRelacao).get(objetoBackup.toString());
-                        eventoAtual.add(adjRelacao, objetoAtual, pesoBackup);
-                        objetoAtual.add(adjRelacao, eventoAtual, pesoBackup);
-                    }
-                }
-            }
-        }
-    }
-
-    public void restaurarRede_F(Rede backup) {
-        for (String relacao : camadas.keySet()) {
-            for (No objeto : camadas.get(relacao).values()) {
-                No objetoBackup = backup.camadas.get(relacao).get(objeto.toString());
-                for (int i = 0; i < F_size; i++) {
-                    objeto.F[i] = objetoBackup.F[i];
-                }
-            }
-        }
-    }
-
-    @Override
-    public Rede clone() {
-        Rede copia = new Rede();
-        for (String camada_nome : camadas.keySet()) {
-            copia.camadas.put(camada_nome, new HashMap<>());
-            for (No objeto : camadas.get(camada_nome).values()) {
-                No copiaObjeto = copia.camadas.get(camada_nome).get(objeto.toString());
-                if (copiaObjeto == null) {
-                    copiaObjeto = new No(objeto.toString());
-                }
-                copiaObjeto.F = new double[F_size];
-                if (objeto.Y != null) {
-                    copiaObjeto.Y = new double[F_size];
-                }
-                for (int i = 0; i < F_size; i++) {
-                    copiaObjeto.F[i] = objeto.F[i];
-                    if (copiaObjeto.Y != null) {
-                        copiaObjeto.Y[i] = objeto.Y[i];
-                    }
-                }
-                for (String adjRelacao : objeto.adjacentes.keySet()) {
-                    for (No noAdj : objeto.adjacentes.get(adjRelacao).keySet()) {
-                        double peso = objeto.adjacentes.get(adjRelacao).get(noAdj);
-                        No copiaAdj = null;
-                        String noAdjCamada_name;
-                        if (adjRelacao.startsWith(camada_nome + "_")) {
-                            noAdjCamada_name = adjRelacao.replaceAll(camada_nome + "_", "");
-                        } else {
-                            noAdjCamada_name = adjRelacao.replaceAll("_" + camada_nome, "");
-                        }
-                        if (copia.camadas.get(noAdjCamada_name) == null) {
-                            copia.camadas.put(noAdjCamada_name, new HashMap<>());
-                        } else {
-                            copiaAdj = copia.camadas.get(noAdjCamada_name).get(noAdj.toString());
-                        }
-                        if (copiaAdj == null) {
-                            copiaAdj = new No(noAdj.toString());
-                            copia.camadas.get(noAdjCamada_name).put(noAdj.toString(), copiaAdj);
-                        }
-                        copiaObjeto.add(adjRelacao, copiaAdj, peso);
-                    }
-                }
-                copia.camadas.get(camada_nome).put(copiaObjeto.toString(), copiaObjeto);
-            }
-        }
-        return copia;
-    }
 }

@@ -11,16 +11,16 @@ import org.json.JSONObject;
  */
 public class TSRF {
 
-    private Rede rede;
-    private LLGC alpha, beta;
-    private boolean resetarF;
-    private String entropiaRelacoes_str, target;
+    private final Rede rede;
+    private final LLGC alpha, beta;
+    private final String target;
 
 
     public TSRF(Rede rede, JSONObject json) {
         this.rede = rede;
         this.alpha = new LLGC(rede, json);
         this.beta = new LLGC(rede, json, json.getDouble("miBeta"));
+        this.target = json.getString("target_layer");
     }
 
     public void classificar() throws Exception {
@@ -75,10 +75,6 @@ public class TSRF {
         }
         System.out.print("Importancia das Camadas: ");
         System.out.println(entropiaCamadas.toString());
-        entropiaRelacoes_str = entropiaCamadas.toString();
-        if (resetarF) {
-            rede.limparRede();
-        }
         for (HashMap<String, No> camada : rede.camadas.values()) {
             for (No no1 : camada.values()) {
                 for (HashMap<No, Double> adjs : no1.adjacentes.values()) {

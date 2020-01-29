@@ -11,5 +11,6 @@
 
   "weight_relations": {},
 
-  "miBeta": "1"
+  "miBeta": "1",
+  "target_layer": "evetos"
 }

@@ -40,7 +40,9 @@ Configuration file example
 
   "weight_relations": {},
 
-  "miBeta": "1"
+  "miBeta": "1",
+
+  "target_layer": "evetos"
 }
 ```
 For all methods:
@@ -53,6 +55,7 @@ Method parameters:
 - **mi:** Importance of labeled data during the propagation of labels, ranging from 0.1 to 1. Used in **LLGC**, **GNetMine** and **TSRF alpha regularizer**
 - **weight_relations:** Weight of the relations between the layers, the name of the layers must be connected by 'underline' and the values will be automatically normalized when running GNetMine, all existing layer relations must be defined. If no pair of layers is specified all pairs of layers will have equal weights. Used only in **GNetMine**
 - **miBeta:** Equal to **mi**. Used only in **TSRF beta regularizer**
+- **target_layer:** What is the target layer of the classification. Used only in **TSRF**
 
 # Edges File
 In edges file each line represents an edge in the following format:
