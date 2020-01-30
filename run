@@ -1,0 +1,3 @@
+unzip datasets/*
+
+java -Xmx5G -cp TSRN4HEN.jar algoritmos.TSRF params.json

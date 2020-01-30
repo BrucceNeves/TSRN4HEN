@@ -1,7 +1,7 @@
 {
   "iterations":"1000",
   "convergenceThreshold":"0.00005",
-  "labels": "labels/business_transactions.labeled_events",
+  "labels": "labels/business_transactions.50_labeled_events",
   "relations": [
     "datasets/business_transactions.edges"
   ],
@@ -12,5 +12,5 @@
   "weight_relations": {},
 
   "miBeta": "1",
-  "target_layer": "evetos"
+  "target_layer": "event"
 }
