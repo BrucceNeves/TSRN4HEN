@@ -25,15 +25,15 @@ Configuration file example
 ```json
 {
   "iterations":"1000",
- 
+
   "convergenceThreshold":"0.00005",
- 
-  "labels": "labels/business_transactions.labeled_events",
- 
+
+  "labels": "labels/business_transactions.50_labeled_events",
+
   "relations": [
     "datasets/business_transactions.edges"
   ],
- 
+
   "output_file": "out.model",
 
   "mi": "1",
@@ -42,7 +42,7 @@ Configuration file example
 
   "miBeta": "1",
 
-  "target_layer": "evetos"
+  "target_layer": "event"
 }
 ```
 For all methods:
