@@ -1,4 +1,4 @@
-package ferramentas;
+package tools;
 
 import java.io.BufferedReader;
 import java.io.Externalizable;
@@ -15,7 +15,7 @@ import java.util.ArrayList;
 /**
  * @author Brucce
  */
-public class Util {
+public class Useful {
 
     public static ArrayList<String> read(String file) throws Exception {
         return read(new File(file));

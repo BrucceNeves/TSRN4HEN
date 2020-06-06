@@ -1,6 +1,6 @@
-package rede;
+package network;
 
-import ferramentas.Util;
+import tools.Useful;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.Serializable;
@@ -10,27 +10,27 @@ import java.util.HashMap;
 /**
  * @author Brucce
  */
-public final class Rede implements Serializable {
+public final class Network implements Serializable {
 
     private int F_size = 0;
     public static final ArrayList<String> relations_name = new ArrayList<>();
-    public final HashMap<String, HashMap<String, No>> camadas = new HashMap<>();
+    public final HashMap<String, HashMap<String, Node>> layers = new HashMap<>();
 
-    public static void setRelacoesName(Object[] relacoes) {
-        for (Object o : relacoes) {
+    public static void setRelationsName(Object[] relations) {
+        for (Object o : relations) {
             relations_name.add(o.toString());
         }
     }
 
-    public Rede(String fileRelacoes, String fileLabels) throws Exception {
-        this(new String[]{fileRelacoes}, fileLabels);
+    public Network(String fileRelations, String fileLabels) throws Exception {
+        this(new String[]{fileRelations}, fileLabels);
     }
 
-    public Rede(String[] filesRelacoes, String fileLabels) throws Exception {
+    public Network(String[] fileRelations, String fileLabels) throws Exception {
         HashMap<String, String> labels = read_F_file(fileLabels);
         int count = 0;
         System.out.println("Starting reading network");
-        for (String layer : filesRelacoes) {
+        for (String layer : fileRelations) {
             System.out.println("\t" + layer);
             BufferedReader br = new BufferedReader(new FileReader(layer));
             String line;
@@ -44,24 +44,24 @@ public final class Rede implements Serializable {
                     continue;
                 }
                 Object array[] = createNode(aux[0], labels.get(aux[0]));
-                No No_a = (No) array[0];
-                String camada_a = (String) array[1];
+                Node node_a = (Node) array[0];
+                String layer_a = (String) array[1];
                 array = createNode(aux[1], labels.get(aux[1]));
-                No No_b = (No) array[0];
-                String camada_b = (String) array[1];
+                Node node_b = (Node) array[0];
+                String layer_b = (String) array[1];
 
-                double peso = Double.parseDouble(aux[2]);
-                String relacao;
-                if (relations_name.contains(camada_a + "_" + camada_b)) {
-                    relacao = camada_a + "_" + camada_b;
-                } else if (relations_name.contains(camada_b + "_" + camada_a)) {
-                    relacao = camada_b + "_" + camada_a;
+                double weight = Double.parseDouble(aux[2]);
+                String relations;
+                if (relations_name.contains(layer_a + "_" + layer_b)) {
+                    relations = layer_a + "_" + layer_b;
+                } else if (relations_name.contains(layer_b + "_" + layer_a)) {
+                    relations = layer_b + "_" + layer_a;
                 } else {
-                    relacao = camada_a + "_" + camada_b;
-                    relations_name.add(relacao);
+                    relations = layer_a + "_" + layer_b;
+                    relations_name.add(relations);
                 }
-                No_a.add(relacao, No_b, peso);
-                No_b.add(relacao, No_a, peso);
+                node_a.add(relations, node_b, weight);
+                node_b.add(relations, node_a, weight);
                 count++;
                 if (count % 100000 == 0) {
                     System.out.println("\t---------- " + count + " lines read");
@@ -89,48 +89,48 @@ public final class Rede implements Serializable {
         System.out.println("Size of the array F: " + F_size);
         return labels;
     }
-
-    private Object[] createNode(String node, String label_y) {
-        String temp[] = node.split(":");
+    
+    private Object[] createNode(String nodeID, String label_y) {
+        String temp[] = nodeID.split(":");
         if (temp.length > 2) {
-            System.out.println("Warning: Badly formatted node. " + node);
+            System.out.println("Warning: Badly formatted node. " + nodeID);
         }
         String camada = temp[temp.length - 1];
-        No no = null;
-        if (camadas.get(camada) != null) {
-            no = camadas.get(camada).get(node);
+        Node node = null;
+        if (layers.get(camada) != null) {
+            node = layers.get(camada).get(nodeID);
         } else {
-            camadas.put(camada, new HashMap<>());
+            layers.put(camada, new HashMap<>());
         }
-        if (no == null) {
-            no = new No(node);
-            no.F = new double[F_size];
-            no.lastF = new double[F_size];
+        if (node == null) {
+            node = new Node(nodeID);
+            node.F = new double[F_size];
+            node.lastF = new double[F_size];
             if (label_y != null) {
                 String v[] = label_y.split(",");
-                no.Y = new double[F_size];
+                node.Y = new double[F_size];
                 for (int i = 0; i < v.length; i++) {
                     double d = Double.parseDouble(v[i]);
-                    no.F[i] = d;
-                    no.lastF[i] = d;
-                    no.Y[i] = d;
+                    node.F[i] = d;
+                    node.lastF[i] = d;
+                    node.Y[i] = d;
                 }
             }
-            camadas.get(camada).put(no.toString(), no);
+            layers.get(camada).put(node.toString(), node);
         }
-        return new Object[]{no, camada};
+        return new Object[]{node, camada};
     }
 
-    public double[] criarVetorClasse() {
+    public double[] createClassVector() {
         return new double[F_size];
     }
 
-    public void salvarRede(String fileoutput) throws Exception {
-        Util.output(fileoutput, "");
-        for (HashMap<String, No> camada : camadas.values()) {
-            for (No no : camada.values()) {
-                String t = java.util.Arrays.toString(no.F).replace(" ", "");
-                Util.addToFile(fileoutput, no + "\t" + t.substring(1, t.length() - 1) + "\n");
+    public void saveNetwork(String fileoutput) throws Exception {
+        Useful.output(fileoutput, "");
+        for (HashMap<String, Node> layer : layers.values()) {
+            for (Node node : layer.values()) {
+                String t = java.util.Arrays.toString(node.F).replace(" ", "");
+                Useful.addToFile(fileoutput, node + "\t" + t.substring(1, t.length() - 1) + "\n");
             }
         }
     }
