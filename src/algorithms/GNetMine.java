@@ -52,16 +52,16 @@ public final class GNetMine extends TransductiveClassifier {
                 if (mi == 1.0 && Oi.Y != null) {
                     continue;
                 }
-                for (String Oi_adjRelacao : Oi.adjacent.keySet()) {
-                    relation = Oi_adjRelacao;
+                for (String Oi_adjRelation : Oi.adjacent.keySet()) {
+                    relation = Oi_adjRelation;
                     HashMap<Node, Double> adjs = Oi.adjacent.get(relation);
                     for (Node Oj : adjs.keySet()) {
                         if (ImportanceRelation.get(relation) == null) {
                             System.out.println(relation);
                         }
-                        double peso = getWeightRelation(Oi, Oj, adjs.get(Oj)) * ImportanceRelation.get(relation);
+                        double weight = getWeightRelation(Oi, Oj, adjs.get(Oj)) * ImportanceRelation.get(relation);
                         for (int k = 0; k < f.length; k++) {
-                            f[k] += Oj.lastF[k] * peso;
+                            f[k] += Oj.lastF[k] * weight;
                         }
                     }
                 }

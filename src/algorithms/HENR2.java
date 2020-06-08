@@ -9,14 +9,14 @@ import org.json.JSONObject;
 /**
  * @author Brucce
  */
-public class TSRF {
+public class HENR2 {
 
     private final Network network;
     private final LLGC alpha, beta;
     private final String target;
 
 
-    public TSRF(Network rede, JSONObject json) {
+    public HENR2(Network rede, JSONObject json) {
         this.network = rede;
         this.alpha = new LLGC(rede, json);
         this.beta = new LLGC(rede, json, json.getDouble("miBeta"));
@@ -128,7 +128,7 @@ public class TSRF {
         }
         Network network = new Network(layers, json.getString("labels"));
 
-        TSRF alg = new TSRF(network, json);
+        HENR2 alg = new HENR2(network, json);
         alg.classificar();
         network.saveNetwork(json.getString("output_file"));
     }
