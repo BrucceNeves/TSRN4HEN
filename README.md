@@ -1,6 +1,6 @@
 # A Two-Stage Regularization Framework for Heterogeneous Event Networks
 
-This repository contains supplementary material of the paper "A Two-Stage Regularization Framework for Heterogeneous Event Networks" submitted to the  Pattern Recognition Letters journal (under review).
+This repository contains supplementary material of the paper "A Two-Stage Regularization Framework for Heterogeneous Event Networks" published in Pattern Recognition Letters journal (https://doi.org/10.1016/j.patrec.2020.08.019).
 
 **Abstract**: *Event analysis from news and social networks is a promising way to understand complex social phenomena. Each event consists of different components, which indicate what happened, when, where, and the people and organizations involved. Heterogeneous networks are useful for modeling large event datasets, where we map different types of objects (e.g. events and their components), as well as the different relationships between objects. Such networks enable the identification of related events, in which users label some events in categories and then use the network’s topological structure to find other events of interest. Although this process can be automated, there is a lack of machine learning methods to properly handle event classification from heterogeneous networks. In this paper, we present the framework named Heterogeneous Event Network Regularization in Two-stages (ENR<sup>2</sup>). The first stage of HENR<sup>2</sup> aims to learn the importance level of each relationship between events and their components. In the second stage, the regularization process considers the importance levels of each relationship to propagate labels on the network. Thus, the classification process is improved by considering the domain characteristics of the event dataset, such as temporal seasonality and geographical distribution. In both stages, our approach also deals with noisy data through parameters that define the confidence level of labeled events during label propagation. Experimental results involving twelve event networks from different application domains show that our proposal outperforms existing regularization frameworks.*
 
@@ -18,7 +18,12 @@ Example:
 
 	> java -Xmx5G -cp TSRN4HEN.jar algorithms.HENR2 params.json
 
-- Available methods: HENR2, GFHF, LLGC, GNetMine, LPHN
+# Available methods
+  * HENR2
+  * GFHF
+  * LLGC
+  * GNetMine
+  * LPHN
 
 # Configuration file
 Configuration file example
@@ -69,4 +74,18 @@ In labels file each line represents a node and its respective label in onehot fo
 ```tsv
 node1:layer1\tclass1,class2,class3
 node2:layer1\tclass1,class2,class3
+```
+
+# Citation
+Please cite the following paper when using this code:
+```
+@article{dos2020two,
+  title={A two-stage regularization framework for heterogeneous event networks},
+  author={dos Santos, Brucce Neves and Rossi, Rafael Geraldeli and Rezende, Solange Oliveira and Marcacini, Ricardo Marcondes},
+  journal={Pattern Recognition Letters},
+  volume={138},
+  pages={490--496},
+  year={2020},
+  publisher={Elsevier}
+}
 ```
