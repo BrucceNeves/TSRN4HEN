@@ -1,1 +1,140 @@
-
+<table>
+<thead>
+  <tr>
+    <th colspan="3"></th>
+    <th colspan="5">Vertices per Layer</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>Dataset</td>
+    <td>Edges</td>
+    <td>Vertices</td>
+    <td>Event</td>
+    <td>Bag</td>
+    <td>Geographic</td>
+    <td>Temporal</td>
+    <td>HL</td>
+  </tr>
+  <tr>
+    <td>commodity markets</td>
+    <td>857476</td>
+    <td>45615</td>
+    <td>38504</td>
+    <td>5943</td>
+    <td>192</td>
+    <td>363</td>
+    <td>613</td>
+  </tr>
+  <tr>
+    <td>general subjects</td>
+    <td>414872</td>
+    <td>34482</td>
+    <td>22070</td>
+    <td>11658</td>
+    <td>231</td>
+    <td>365</td>
+    <td>158</td>
+  </tr>
+  <tr>
+    <td>crimes and justice</td>
+    <td>1311486</td>
+    <td>81202</td>
+    <td>65771</td>
+    <td>14255</td>
+    <td>266</td>
+    <td>365</td>
+    <td>545</td>
+  </tr>
+  <tr>
+    <td>business transactions</td>
+    <td>322989</td>
+    <td>27604</td>
+    <td>17802</td>
+    <td>8842</td>
+    <td>189</td>
+    <td>362</td>
+    <td>409</td>
+  </tr>
+  <tr>
+    <td>exchange markets</td>
+    <td>1515632</td>
+    <td>114681</td>
+    <td>104312</td>
+    <td>8302</td>
+    <td>189</td>
+    <td>365</td>
+    <td>1513</td>
+  </tr>
+  <tr>
+    <td>trade reserves</td>
+    <td>178773</td>
+    <td>13799</td>
+    <td>8850</td>
+    <td>4162</td>
+    <td>217</td>
+    <td>361</td>
+    <td>209</td>
+  </tr>
+  <tr>
+    <td>inflation</td>
+    <td>39173</td>
+    <td>4016</td>
+    <td>2126</td>
+    <td>1409</td>
+    <td>114</td>
+    <td>321</td>
+    <td>46</td>
+  </tr>
+  <tr>
+    <td>consumer finances</td>
+    <td>22004</td>
+    <td>2526</td>
+    <td>1085</td>
+    <td>1020</td>
+    <td>66</td>
+    <td>276</td>
+    <td>79</td>
+  </tr>
+  <tr>
+    <td>lawsuits</td>
+    <td>384018</td>
+    <td>29516</td>
+    <td>19543</td>
+    <td>8832</td>
+    <td>208</td>
+    <td>365</td>
+    <td>568</td>
+  </tr>
+  <tr>
+    <td>reports</td>
+    <td>402657</td>
+    <td>33502</td>
+    <td>22079</td>
+    <td>10268</td>
+    <td>227</td>
+    <td>365</td>
+    <td>563</td>
+  </tr>
+  <tr>
+    <td>government indicators</td>
+    <td>438813</td>
+    <td>31534</td>
+    <td>23711</td>
+    <td>7064</td>
+    <td>217</td>
+    <td>365</td>
+    <td>177</td>
+  </tr>
+  <tr>
+    <td>natural disasters</td>
+    <td>263648</td>
+    <td>20047</td>
+    <td>12582</td>
+    <td>6459</td>
+    <td>231</td>
+    <td>364</td>
+    <td>411</td>
+  </tr>
+</tbody>
+</table>
