@@ -17,7 +17,7 @@
     <td>HL</td>
   </tr>
   <tr>
-    <td>commodity markets</td>
+    <td>Crimes and Justice</td>
     <td>857476</td>
     <td>45615</td>
     <td>38504</td>
@@ -27,7 +27,7 @@
     <td>613</td>
   </tr>
   <tr>
-    <td>general subjects</td>
+    <td>Natural Disasters</td>
     <td>414872</td>
     <td>34482</td>
     <td>22070</td>
@@ -37,7 +37,7 @@
     <td>158</td>
   </tr>
   <tr>
-    <td>crimes and justice</td>
+    <td>Reports</td>
     <td>1311486</td>
     <td>81202</td>
     <td>65771</td>
@@ -47,7 +47,7 @@
     <td>545</td>
   </tr>
   <tr>
-    <td>business transactions</td>
+    <td>Trade Reserves</td>
     <td>322989</td>
     <td>27604</td>
     <td>17802</td>
@@ -57,7 +57,7 @@
     <td>409</td>
   </tr>
   <tr>
-    <td>exchange markets</td>
+    <td>Business Transactions</td>
     <td>1515632</td>
     <td>114681</td>
     <td>104312</td>
@@ -67,7 +67,7 @@
     <td>1513</td>
   </tr>
   <tr>
-    <td>trade reserves</td>
+    <td>Government Indicators</td>
     <td>178773</td>
     <td>13799</td>
     <td>8850</td>
@@ -77,7 +77,7 @@
     <td>209</td>
   </tr>
   <tr>
-    <td>inflation</td>
+    <td>Exchange Markets</td>
     <td>39173</td>
     <td>4016</td>
     <td>2126</td>
@@ -87,7 +87,7 @@
     <td>46</td>
   </tr>
   <tr>
-    <td>consumer finances</td>
+    <td>Consumer Finances</td>
     <td>22004</td>
     <td>2526</td>
     <td>1085</td>
@@ -97,7 +97,7 @@
     <td>79</td>
   </tr>
   <tr>
-    <td>lawsuits</td>
+    <td>Inflation</td>
     <td>384018</td>
     <td>29516</td>
     <td>19543</td>
@@ -107,7 +107,7 @@
     <td>568</td>
   </tr>
   <tr>
-    <td>reports</td>
+    <td>General Subjects</td>
     <td>402657</td>
     <td>33502</td>
     <td>22079</td>
@@ -117,7 +117,7 @@
     <td>563</td>
   </tr>
   <tr>
-    <td>government indicators</td>
+    <td>Lawsuits</td>
     <td>438813</td>
     <td>31534</td>
     <td>23711</td>
@@ -127,7 +127,7 @@
     <td>177</td>
   </tr>
   <tr>
-    <td>natural disasters</td>
+    <td>Commodity Markets</td>
     <td>263648</td>
     <td>20047</td>
     <td>12582</td>
