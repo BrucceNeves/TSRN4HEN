@@ -17,7 +17,7 @@
     <td>L6</td>
   </tr>
   <tr>
-    <td>crimes and justice</td>
+    <td>Crimes and Justice</td>
     <td>22154</td>
     <td>24850</td>
     <td>18767</td>
@@ -27,7 +27,7 @@
     <td>-</td>
   </tr>
   <tr>
-    <td>natural disasters</td>
+    <td>Natural Disasters</td>
     <td>4303</td>
     <td>2447</td>
     <td>5832</td>
@@ -37,7 +37,7 @@
     <td>-</td>
   </tr>
   <tr>
-    <td>reports</td>
+    <td>Reports</td>
     <td>6784</td>
     <td>7724</td>
     <td>5510</td>
@@ -47,7 +47,7 @@
     <td>-</td>
   </tr>
   <tr>
-    <td>trade reserves</td>
+    <td>Trade Reserves</td>
     <td>2320</td>
     <td>4436</td>
     <td>2094</td>
@@ -57,7 +57,7 @@
     <td>-</td>
   </tr>
   <tr>
-    <td>business transactions</td>
+    <td>Business Transactions</td>
     <td>3994</td>
     <td>5198</td>
     <td>1598</td>
@@ -67,7 +67,7 @@
     <td>-</td>
   </tr>
   <tr>
-    <td>government indicators</td>
+    <td>Government Indicators</td>
     <td>6078</td>
     <td>8137</td>
     <td>7885</td>
@@ -77,7 +77,7 @@
     <td>-</td>
   </tr>
   <tr>
-    <td>exchange markets</td>
+    <td>Exchange Markets</td>
     <td>42070</td>
     <td>43387</td>
     <td>18855</td>
@@ -87,7 +87,7 @@
     <td>-</td>
   </tr>
   <tr>
-    <td>consumer finances</td>
+    <td>Consumer Finances</td>
     <td>343</td>
     <td>555</td>
     <td>187</td>
@@ -97,7 +97,7 @@
     <td>-</td>
   </tr>
   <tr>
-    <td>inflation</td>
+    <td>Inflation</td>
     <td>757</td>
     <td>1369</td>
     <td>-</td>
@@ -107,7 +107,7 @@
     <td>-</td>
   </tr>
   <tr>
-    <td>general subjects</td>
+    <td>General Subjects</td>
     <td>6397</td>
     <td>5146</td>
     <td>2604</td>
@@ -117,7 +117,7 @@
     <td>636</td>
   </tr>
   <tr>
-    <td>lawsuits</td>
+    <td>Lawsuits</td>
     <td>9053</td>
     <td>10490</td>
     <td>-</td>
@@ -127,7 +127,7 @@
     <td>-</td>
   </tr>
   <tr>
-    <td>commodity markets</td>
+    <td>Commodity Markets</td>
     <td>15520</td>
     <td>10839</td>
     <td>12145</td>
